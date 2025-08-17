@@ -1,5 +1,5 @@
-use std::arch::asm;
 use crate::error::Error;
+use std::arch::asm;
 
 impl Error {
     pub fn last() -> Self {

@@ -1,5 +1,5 @@
-use thiserror::Error;
 use crate::enum_from_display;
+use thiserror::Error;
 
 enum_from_display!(
     #[derive(Error, Debug, Eq, PartialEq)]

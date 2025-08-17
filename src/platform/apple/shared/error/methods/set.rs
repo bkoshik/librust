@@ -1,6 +1,5 @@
-use std::arch::asm;
-use crate::error::Error;
 use crate::errno::set_errno;
+use crate::error::Error;
 
 impl Error {
     pub fn set(self) {
