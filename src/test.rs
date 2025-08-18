@@ -1,5 +1,4 @@
 use crate::syscall::{syscall, SyscallNumber};
-use crate::flags;
 
 #[test]
 fn write_syscall() -> Result<(), Box<dyn std::error::Error>> {
