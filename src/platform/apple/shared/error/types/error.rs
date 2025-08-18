@@ -10,7 +10,7 @@ enum_from_display!(
         NotFound = 2 => "No such file or directory",
         NoSuchProcess = 3 => "No such process",
         Interrupted = 4 => "Interrupted",
-        IoError = 5 => "I/O error_types",
+        IoError = 5 => "I/O error",
         NoSuchDeviceOrAddress = 6 => "No such device or address",
         ArgumentListTooLong = 7 => "Argument list too long",
         ExecFormatError = 8 => "Exec format error",
