@@ -1,6 +1,7 @@
 mod shared {
     pub mod errno;
     pub mod error;
+    pub mod flags;
 }
 pub use shared::*;
 
