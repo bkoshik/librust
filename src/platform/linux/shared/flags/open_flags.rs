@@ -16,7 +16,7 @@ define_bitflags!(
         NoFollowLink = 0x8000,
         Direct = 0x10_000,
         NoATime = 0x40_000,
-        CloseOnExec = 0x80_000
+        CloseOnExec = 0x80_000,
         Sync = 0x101_000,
         RSync = 0x101_000,
         FSync = 0x101_000,
