@@ -8,7 +8,7 @@ macro_rules! enum_from_display {
     ) => {
         $(#[$outer])*
         #[derive(Clone, Copy)]
-pub enum $name {
+        pub enum $name {
             $($variant = $value),*
         }
 
@@ -23,7 +23,7 @@ pub enum $name {
         impl $name {
             pub fn from_raw(err: i64) -> Self {
                 match err {
-                    $($value => $name::$variant,),*
+                    $($value => $name::$variant,)*
                     _ => unreachable!()
                 }
             }

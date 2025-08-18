@@ -10,7 +10,7 @@ pub fn syscall(num: SyscallNumber, args: &[i64; 6]) -> Result<i64> {
         asm!(
             "syscall",
             "setc {cf}",
-            in("rax") 0x2_000_000u64 + num as u64,
+            in("rax") 0x2_000_000 + num,
             in("rdi") args[0],
             in("rsi") args[1],
             in("rdx") args[2],

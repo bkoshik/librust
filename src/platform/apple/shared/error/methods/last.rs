@@ -1,5 +1,5 @@
+use crate::errno::get_errno;
 use crate::error::Error;
-use std::arch::asm;
 
 impl Error {
     pub fn last() -> Self {
@@ -7,15 +7,6 @@ impl Error {
     }
 
     pub fn last_raw() -> i64 {
-        let error;
-        unsafe {
-            asm!(
-                "cmp x0, #0",
-                "cneg x0, x0, lt",
-                lateout("x0") error,
-            )
-        };
-
-        return error;
+        return get_errno() as i64;
     }
 }
