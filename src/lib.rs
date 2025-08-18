@@ -14,6 +14,11 @@ mod platform {
     platform_template!(apple);
     #[cfg(target_os = "macos")]
     pub use apple::*;
+
+    #[cfg(target_os = "linux")]
+    platform_template!(linux);
+    #[cfg(target_os = "linux")]
+    pub use linux::*;
 }
 pub use platform::*;
 
