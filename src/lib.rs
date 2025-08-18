@@ -1,6 +1,14 @@
 mod platform {
+    use crate::platform_template;
+    
+    mod shared {
+        mod error;
+        pub mod errno;
+    }
+    pub use shared::*;
+
     #[cfg(target_os = "macos")]
-    mod apple;
+    platform_template!(apple);
     #[cfg(target_os = "macos")]
     pub use apple::*;
 }

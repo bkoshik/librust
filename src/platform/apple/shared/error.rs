@@ -7,8 +7,4 @@ mod types {
 }
 pub use types::*;
 
-mod methods {
-    mod clear;
-    mod last;
-    mod set;
-}
+
