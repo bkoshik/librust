@@ -12,6 +12,6 @@ jobs:
       - name: Trigger workflow in Repo FSIO
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.PAT_TO_FSIO }}
+          token: ${{ secrets.PAT_FOR_FSIO }}
           repository: bkoshik/fsio
           event-type: trigger-ci
