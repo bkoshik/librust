@@ -1,4 +1,15 @@
 #[macro_export]
+macro_rules! create_args {
+    ( $($arg:expr),* ) => {{
+        let mut args = [0i64; 6];
+        let tmp = [ $($arg),* ];
+        args[..tmp.len()].copy_from_slice(&tmp);
+
+        args
+    }};
+}
+
+#[macro_export]
 macro_rules! enum_from_display {
     (
         $(#[$outer:meta])*
@@ -12,8 +23,8 @@ macro_rules! enum_from_display {
             $($variant = $value),*
         }
 
-        impl std::fmt::Display for $name {
-            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        impl core::fmt::Display for $name {
+            fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
                 match self {
                     $(Self::$variant => write!(f, $display)),*
                 }

@@ -1,6 +1,6 @@
 use crate::error::Error;
-use std::cell::Cell;
+use core::cell::Cell;
+use os_thread_local::ThreadLocal;
+use once_cell::sync::Lazy;
 
-thread_local! {
-    pub static ERRNO: Cell<Error> = Cell::new(Error::Unknown);
-}
+pub static ERRNO: Lazy<ThreadLocal<Cell<Error>>> = Lazy::new(|| ThreadLocal::new(|| Cell::new(Error::Unknown)));

@@ -1,6 +1,6 @@
 use crate::error::*;
 use crate::syscall::SyscallNumber;
-use std::arch::asm;
+use core::arch::asm;
 
 pub fn syscall(num: SyscallNumber, args: &[i64; 6]) -> Result<i64> {
     let result: i64;
