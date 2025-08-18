@@ -3,16 +3,16 @@
 version = 4
 
 [[package]]
-name = "libc"
-version = "1.0.0-alpha.1"
+name = "bitflags"
+version = "2.9.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7222002e5385b4d9327755661e3847c970e8fbf9dea6da8c57f16e8cfbff53a8"
+checksum = "6a65b545ab31d687cff52899d4890855fec459eb6afe0da6417b8a18da87aa29"
 
 [[package]]
 name = "librust"
 version = "0.1.0"
 dependencies = [
- "libc",
+ "bitflags",
  "thiserror",
 ]
 
