@@ -8,7 +8,6 @@ pub fn syscall(num: SyscallNumber, args: &[i64; 6]) -> Result<i64> {
     unsafe {
         asm!(
             "syscall",
-            "setc {cf}",
             in("rax") num as i64,
             in("rdi") args[0],
             in("rsi") args[1],
@@ -17,11 +16,13 @@ pub fn syscall(num: SyscallNumber, args: &[i64; 6]) -> Result<i64> {
             in("r8")  args[4],
             in("r9")  args[5],
             lateout("rax") result,
+            lateout("rcx") _,
+            lateout("r11") _,
             options(nostack),
         );
     }
     if result < 0 {
-        Error::set_raw(result);
+        Error::set_raw(-result);
         return Err(Error::last());
     }
 

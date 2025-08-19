@@ -8,7 +8,6 @@ pub fn syscall(num: SyscallNumber, args: &[i64; 6]) -> Result<i64> {
     unsafe {
         asm!(
             "svc #0",
-            "cset {cf}, cs",
             in("x0") args[0],
             in("x1") args[1],
             in("x2") args[2],
@@ -21,7 +20,7 @@ pub fn syscall(num: SyscallNumber, args: &[i64; 6]) -> Result<i64> {
         );
     }
     if result < 0 {
-        Error::set_raw(result);
+        Error::set_raw(-result);
         return Err(Error::last());
     }
 
