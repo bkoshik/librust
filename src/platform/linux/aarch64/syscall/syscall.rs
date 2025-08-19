@@ -4,7 +4,6 @@ use core::arch::asm;
 
 pub fn syscall(num: SyscallNumber, args: &[i64; 6]) -> Result<i64> {
     let result: i64;
-    let mut cf_err: u64;
 
     unsafe {
         asm!(
@@ -18,11 +17,10 @@ pub fn syscall(num: SyscallNumber, args: &[i64; 6]) -> Result<i64> {
             in("x5") args[5],
             in("x8") num as i64,
             lateout("x0") result,
-            cf = lateout(reg) cf_err,
             options(nostack),
         );
     }
-    if cf_err != 0 {
+    if result < 0 {
         Error::set_raw(result);
         return Err(Error::last());
     }
