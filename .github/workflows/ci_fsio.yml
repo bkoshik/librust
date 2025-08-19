@@ -3,7 +3,7 @@ name: Trigger CI in Repo FSIO
 on:
   push:
     branches:
-      - main
+      - '*'
 
 jobs:
   trigger:
