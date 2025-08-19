@@ -64,8 +64,8 @@ macro_rules! define_bitflags {
 
 #[macro_export]
 macro_rules! platform_template {
-    ($name:ident) => {
-        mod $name {
+    ($mod_name:ident) => {
+        mod $mod_name {
             mod shared {
                 pub mod error;
                 pub mod flags;
@@ -99,5 +99,15 @@ macro_rules! platform_template {
             #[cfg(target_arch = "x86_64")]
             pub use x86_64::*;
         }
+    };
+}
+
+#[macro_export]
+macro_rules! platform_choosing {
+    ($cfg:meta, $mod_name:ident) => {
+        #[cfg($cfg)]
+        platform_template!($mod_name);
+        #[cfg($cfg)]
+        pub use $mod_name::*;
     };
 }

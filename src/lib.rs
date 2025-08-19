@@ -1,7 +1,7 @@
 #![no_std]
 
 mod platform {
-    use crate::platform_template;
+    use crate::{platform_choosing, platform_template};
 
     mod shared {
         pub mod errno;
@@ -9,15 +9,9 @@ mod platform {
     }
     pub use shared::*;
 
-    #[cfg(target_os = "macos")]
-    platform_template!(apple);
-    #[cfg(target_os = "macos")]
-    pub use apple::*;
+    platform_choosing!(any(target_os = "macos"), apple);
 
-    #[cfg(target_os = "linux")]
-    platform_template!(linux);
-    #[cfg(target_os = "linux")]
-    pub use linux::*;
+    platform_choosing!(any(target_os = "linux"), linux);
 }
 pub use platform::*;
 
