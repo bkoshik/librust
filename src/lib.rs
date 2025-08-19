@@ -1,12 +1,11 @@
-// #![no_std]
-extern crate alloc;
+#![no_std]
 
 mod platform {
     use crate::platform_template;
 
     mod shared {
-        mod error;
         pub mod errno;
+        mod error;
     }
     pub use shared::*;
 

@@ -6,5 +6,3 @@ mod types {
     pub use result::*;
 }
 pub use types::*;
-
-

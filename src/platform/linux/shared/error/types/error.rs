@@ -1,10 +1,10 @@
 use crate::enum_from_display;
-use thiserror::Error;
 
 enum_from_display!(
-    #[derive(Error, Debug, Eq, PartialEq)]
+    #[derive(Debug, Eq, PartialEq)]
     #[repr(i64)]
     pub enum Error {
+        Unknown = 0 => "unknown error",
         PermissionDenied = 1 => "Permission denied",
         NotFound = 2 => "No such file or directory",
         NoSuchProcess = 3 => "No such process",

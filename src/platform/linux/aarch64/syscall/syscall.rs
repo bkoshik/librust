@@ -5,7 +5,7 @@ use core::arch::asm;
 pub fn syscall(num: SyscallNumber, args: &[i64; 6]) -> Result<i64> {
     let result: i64;
     let mut cf_err: u64;
-    
+
     unsafe {
         asm!(
             "svc #0",
