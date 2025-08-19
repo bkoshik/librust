@@ -10,8 +10,6 @@ mod platform {
     pub use shared::*;
 
     platform_choosing!(any(target_os = "macos"), apple);
-
-    platform_choosing!(any(target_os = "linux"), linux);
 }
 pub use platform::*;
 
