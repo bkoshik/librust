@@ -69,6 +69,7 @@ macro_rules! platform_template {
             mod shared {
                 pub mod error;
                 pub mod flags;
+                pub mod structs;
             }
             pub use shared::*;
 

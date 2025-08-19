@@ -1,4 +1,4 @@
-#![no_std]
+// #![no_std]
 extern crate alloc;
 
 mod platform {
@@ -21,6 +21,11 @@ mod platform {
     pub use linux::*;
 }
 pub use platform::*;
+
+pub mod unix {
+    mod fs;
+    pub use fs::*;
+}
 
 mod macros;
 
