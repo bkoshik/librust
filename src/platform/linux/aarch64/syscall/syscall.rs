@@ -16,7 +16,7 @@ pub fn syscall(num: SyscallNumber, args: &[i64; 6]) -> Result<i64> {
             in("x3") args[3],
             in("x4") args[4],
             in("x5") args[5],
-            in("x16") num as i64,
+            in("x8") num as i64,
             lateout("x0") result,
             cf = lateout(reg) cf_err,
             options(nostack),
