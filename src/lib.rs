@@ -22,6 +22,7 @@ mod platform {
 }
 pub use platform::*;
 
+#[cfg(feature = "unix")]
 pub mod unix {
     mod fs;
     pub use fs::*;

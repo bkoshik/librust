@@ -6,6 +6,9 @@ edition = "2024"
 [lib]
 path = "src/lib.rs"
 
+[features]
+unix = []
+
 [dependencies]
 thiserror = "2.0.14"
 bitflags = "2.9.2"
