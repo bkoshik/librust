@@ -36,7 +36,6 @@ Import in your Rust code:
 use librust::error;      // Errno handler
 use librust::syscall;    // Syscall
 use librust::unix;       // Syscall wrappers
-use librust::primitives; // Primitive String
 ```
 
 ## Contributing
