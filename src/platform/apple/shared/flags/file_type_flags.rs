@@ -1,6 +1,6 @@
 use crate::define_bitflags;
 
-define_bitflags!(
+define_bitflags! {
     pub bitflag FileTypeFlags: u64 {
         NamedPipe = 0o10_000,
         CharacterDevice = 0o20_000,
@@ -11,4 +11,4 @@ define_bitflags!(
         Socket = 0o140_000,
         MaskType = 0o170_000,
     }
-);
+}

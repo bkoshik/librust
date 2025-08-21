@@ -1,6 +1,6 @@
 use crate::define_bitflags;
 
-define_bitflags!(
+define_bitflags! {
     pub bitflag OpenFlags: u64 {
         ReadOnly = 0x0,
         WriteOnly = 0x1,
@@ -26,4 +26,4 @@ define_bitflags!(
         ExecuteOnly = 0x40_000_000,
         SearchOnly = 0x41_000_000,
     }
-);
+}
