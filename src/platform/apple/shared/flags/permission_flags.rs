@@ -1,6 +1,6 @@
 use crate::define_bitflags;
 
-define_bitflags!(
+define_bitflags! {
     pub bitflag PermissionFlags: u64 {
         MaskType = 0o777,
 
@@ -24,4 +24,4 @@ define_bitflags!(
         OtherWrite = 0o002,
         OtherExec = 0o001,
     }
-);
+}
